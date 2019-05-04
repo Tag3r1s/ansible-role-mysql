@@ -10,6 +10,9 @@ mysql_root_home: /root
 mysql_root_username: root
 mysql_root_password: root
 
+# Set this to `true` to disable MySQL history
+mysql_disable_history: false
+
 # Set this to `true` to forcibly update the root password.
 mysql_root_password_update: false
 mysql_user_password_update: false

@@ -84,3 +84,9 @@
 
 - name: Remove MySQL test database.
   mysql_db: "name='test' state=absent"
+
+- name: Disable MySQL history
+  lineinfile:
+    path: "/etc/environment"
+    line: "MYSQL_HISTFILE=/dev/null"
+  when: mysql_disable_history
