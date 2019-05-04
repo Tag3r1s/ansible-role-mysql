@@ -21,6 +21,12 @@ skip-networking
 sql_mode = {{ mysql_sql_mode }}
 {% endif %}
 
+{% if mysql_validate_password %}
+plugin-load-add=validate_password.so
+validate-password=FORCE_PLUS_PERMANENT
+{% endif %}
+
+
 # Logging configuration.
 {% if mysql_log_error == 'syslog' or mysql_log == 'syslog' %}
 syslog
