@@ -29,6 +29,11 @@ log = {{ mysql_log }}
 log-error = {{ mysql_log_error }}
 {% endif %}
 
+{% if mysql_local_infile %}
+# Local infile configuration.
+local-infile = {{ mysql_local_infile }}
+{% endif %}
+
 {% if mysql_slow_query_log_enabled %}
 # Slow query log configuration.
 slow_query_log = 1
